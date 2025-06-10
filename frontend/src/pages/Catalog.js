@@ -7,7 +7,7 @@ export default function Catalog() {
     console.log("Products:", products);
 
     function getProducts() {
-        fetch("https://dwow4264w2.execute-api.us-west-2.amazonaws.com/production/products/all", {
+        fetch("http://localhost:4000/products/all", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }

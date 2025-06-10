@@ -16,7 +16,6 @@ export default function Login() {
     function authenticate(e) {
 
         e.preventDefault();
-        // fetch("https://dwow4264w2.execute-api.us-west-2.amazonaws.com/production/users/login", {
         fetch("http://localhost:4000/users/login", {
             method: 'POST',
             headers: {

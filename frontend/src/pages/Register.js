@@ -39,7 +39,6 @@ export default function Register() {
     function registerUser(user) {
         user.preventDefault();
 
-        // fetch("https://dwow4264w2.execute-api.us-west-2.amazonaws.com/production/users/register", {
         fetch("http://localhost:4000/users/register", {
             method: "POST",
             headers: {

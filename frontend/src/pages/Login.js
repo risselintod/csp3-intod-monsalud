@@ -1,20 +1,23 @@
 import { useState, useEffect, useContext } from 'react';
 import { Form, Row, Col, Button } from "react-bootstrap";
 import { Notyf } from 'notyf';
+import UserContext from '../context/UserContext';
 
 export default function Login() {
 
     const notyf = new Notyf();
-    const { user, setUser } = useState({});
+    const { user, setUser } = useContext(UserContext)
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isActive, setIsActive] = useState(true);
 
+    // console.log("USER: ", user);
+
     function authenticate(e) {
 
         e.preventDefault();
-        fetch("https://dwow4264w2.execute-api.us-west-2.amazonaws.com/production/users/login", {
-        // fetch("http://localhost:4000/users/login", {
+        // fetch("https://dwow4264w2.execute-api.us-west-2.amazonaws.com/production/users/login", {
+        fetch("http://localhost:4000/users/login", {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

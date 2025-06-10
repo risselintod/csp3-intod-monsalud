@@ -1,8 +1,27 @@
+import { useEffect, useState } from "react";
 import { Col, Container, Row, Card, Button } from "react-bootstrap";
 
 export default function Catalog() {
 
-    
+    const [ products, setProducts ] = useState([]);
+    console.log("Products:", products);
+
+    function getProducts() {
+        fetch("https://dwow4264w2.execute-api.us-west-2.amazonaws.com/production/products/all", {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log("Fetch Products:", data);
+            setProducts(data);
+        })
+    }
+
+    useEffect(() => {
+        getProducts();
+    })
 
     return (
         <Container className="p-5 bg-info m-5">
@@ -14,6 +33,7 @@ export default function Catalog() {
                         <Card.Body>
                             <Card.Title>Product Title</Card.Title>
                             <Card.Text>Product Description</Card.Text>
+                            <Card.Text>Price: </Card.Text>
                             <Button variant="primary" className="px-5">Buy</Button>
                         </Card.Body>
                     </Card>
@@ -25,6 +45,7 @@ export default function Catalog() {
                         <Card.Body>
                             <Card.Title>Product Title</Card.Title>
                             <Card.Text>Product Description</Card.Text>
+                            <Card.Text>Price: </Card.Text>
                             <Button variant="primary" className="px-5">Buy</Button>
                         </Card.Body>
                     </Card>
@@ -36,6 +57,7 @@ export default function Catalog() {
                         <Card.Body>
                             <Card.Title>Product Title</Card.Title>
                             <Card.Text>Product Description</Card.Text>
+                            <Card.Text>Price: </Card.Text>
                             <Button variant="primary" className="px-5">Buy</Button>
                         </Card.Body>
                     </Card>
@@ -49,6 +71,7 @@ export default function Catalog() {
                         <Card.Body>
                             <Card.Title>Product Title</Card.Title>
                             <Card.Text>Product Description</Card.Text>
+                            <Card.Text>Price: </Card.Text>
                             <Button variant="primary" className="px-5">Buy</Button>
                         </Card.Body>
                     </Card>
@@ -60,6 +83,7 @@ export default function Catalog() {
                         <Card.Body>
                             <Card.Title>Product Title</Card.Title>
                             <Card.Text>Product Description</Card.Text>
+                            <Card.Text>Price: </Card.Text>
                             <Button variant="primary" className="px-5">Buy</Button>
                         </Card.Body>
                     </Card>
@@ -71,6 +95,7 @@ export default function Catalog() {
                         <Card.Body>
                             <Card.Title>Product Title</Card.Title>
                             <Card.Text>Product Description</Card.Text>
+                            <Card.Text>Price: </Card.Text>
                             <Button variant="primary" className="px-5">Buy</Button>
                         </Card.Body>
                     </Card>

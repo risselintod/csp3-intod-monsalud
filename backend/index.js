@@ -22,7 +22,7 @@ const app = express()
 app.use(express.json())
 
 const corsOptions = {
-  origin: ["http://localhost:4000", "http://localhost:8000", "https://dwow4264w2.execute-api.us-west-2.amazonaws.com/production"],
+  origin: ["http://localhost:4000", "http://localhost:3000"],
   credentials: true,
   optionsSuccessStatus: 200
 }

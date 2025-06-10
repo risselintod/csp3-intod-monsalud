@@ -11,8 +11,8 @@ function App() {
     <Router>
       <Container className='containerApp'>
         <Routes>
-          <Route path='' element={<Register />} />
-          {/* <Route path='' element={<Login />} /> */}
+          {/* <Route path='' element={<Register />} /> */}
+          <Route path='' element={<Login />} />
           {/* <Route path='' element={<Catalog />} /> */}
         </Routes>
       </Container>

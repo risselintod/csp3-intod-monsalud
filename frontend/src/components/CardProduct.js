@@ -33,7 +33,7 @@ export default function CardProduct({product, user, handleToggleProduct}) {
                       </Button>
                     ) : (
                       <Button
-                        variant="primary fixed"
+                        variant="success fixed"
                         className="w-100"
                         onClick={() => navigate(`/product/${product._id}`, {})}
                       >

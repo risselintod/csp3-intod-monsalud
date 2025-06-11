@@ -88,7 +88,7 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            <Button className="mt-3 px-5" type="submit" variant={isActive ? "success" : "primary"} disabled={!isActive}>
+            <Button className="mt-3 px-5" type="submit" variant={isActive ? "success" : "warning"} disabled={!isActive}>
               Login
             </Button>
           </Form.Group>

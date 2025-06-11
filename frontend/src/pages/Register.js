@@ -167,7 +167,7 @@ export default function Register() {
                 Submit
               </Button>
             ) : (
-              <Button className="mt-3 px-5" type="submit" variant="primary" disabled>
+              <Button className="mt-3 px-5" type="submit" variant="warning" disabled>
                 Submit
               </Button>
             )}

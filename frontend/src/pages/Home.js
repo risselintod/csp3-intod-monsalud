@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Home = (products) => {
   console.log("HOME PRODUCTS:", products);
@@ -11,9 +12,9 @@ const Home = (products) => {
         <Container>
           <h1 className="display-4">Welcome to Shoppable </h1>
           <p className="lead">Beautifull products </p>
-          <Button variant="warning" size="lg">
+          <Link className="btn btn-warning" size="lg" to={`/products`}>
             Shop Now
-          </Button>
+          </Link>
         </Container>
       </div>
 

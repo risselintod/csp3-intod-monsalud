@@ -85,7 +85,7 @@ export default function Register() {
   }
 
   return (
-    <Form className="p-5 m-5 bg-info" onSubmit={(e) => registerUser(e)}>
+    <Form className="p-5 m-5 bg-dark text-white" onSubmit={(e) => registerUser(e)}>
       <Row>
         <Col md="8" className="mx-auto">
           <h1 className="text-center my-5">Registration Form</h1>

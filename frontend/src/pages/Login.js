@@ -63,10 +63,10 @@ export default function Login() {
   }, [email, password]);
 
   return (
-    <Form className="p-5 m-5 bg-info" onSubmit={authenticate}>
+    <Form className="p-5 m-5 bg-dark" onSubmit={authenticate}>
       <Row>
         <Col md="8" className="mx-auto">
-          <h1 className="text-center my-5">Login Form</h1>
+          <h1 className="text-center my-5 text-white">Login Form</h1>
           <Form.Group className="pb-5">
             <Form.Label>Email:</Form.Label>
             <Form.Control

@@ -6,7 +6,7 @@ export default function CardProduct({product, user, handleToggleProduct}) {
 
     return (
         <>
-            <Card className="h-100 shadow" onClick={() => navigate(`/product/${product._id}`)}>
+            <Card className="h-100 shadow p-4" onClick={() => navigate(`/product/${product._id}`)}>
                   <Link to={`/product/${product._id}`} style={{ textDecoration: "none", color: "inherit" }}>
                     <Card.Img
                       variant="top"

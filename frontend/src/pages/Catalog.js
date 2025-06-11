@@ -64,7 +64,7 @@ export default function Catalog() {
 
   if (!user.id) {
     return (
-      <Container className="p-5 m-5 bg-warning text-center">
+      <Container className="p-5 m-5 bg-dark text-white text-center">
         <h3>Please login first to view products.</h3>
       </Container>
     );
@@ -72,8 +72,8 @@ export default function Catalog() {
 
   return (
     <>
-      <Container className="p-5 bg-info m-5">
-        <h1 className="text-center pb-3">Products</h1>
+      <Container className="p-5 bg-dark m-5">
+        <h1 className="text-center pb-3 text-white">Products</h1>
 
         {/* 🔧 Admin Add Product Button */}
         {user.isAdmin && (

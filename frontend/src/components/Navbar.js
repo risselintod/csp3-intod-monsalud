@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
@@ -9,7 +9,7 @@ const AppNavbar = () => {
 
   const logout = () => {
     unsetUser();
-
+    localStorage.clear();
     navigate("/login");
   };
 
@@ -17,9 +17,7 @@ const AppNavbar = () => {
     <Navbar bg="light" expand="lg" className="shadow-sm">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <a href="">
-            <img class="rounded-circle mx-2" src="/cartLogo.png" width="30" height="30" />
-          </a>
+          <img className="rounded-circle mx-2" src="/cartLogo.png" width="30" height="30" />
           Shoppable
         </Navbar.Brand>
 

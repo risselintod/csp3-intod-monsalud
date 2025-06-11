@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import CardProduct from "../components/CardProduct";
 
 const Home = (products) => {
   console.log("HOME PRODUCTS:", products);
@@ -55,14 +56,7 @@ const Home = (products) => {
         <Row>
           {[1, 2, 3, 4].map((item) => (
             <Col md={3} sm={6} xs={12} key={item} className="mb-4">
-              <Card className="h-100">
-                <Card.Img variant="top" src="https://via.placeholder.com/300x200" />
-                <Card.Body>
-                  <Card.Title>Product {item}</Card.Title>
-                  <Card.Text>$19.99</Card.Text>
-                  <Button variant="primary">View</Button>
-                </Card.Body>
-              </Card>
+              {/* <CardProduct /> */}
             </Col>
           ))}
         </Row>

@@ -5,6 +5,7 @@ import UserContext from "../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import AddProductModal from "../components/AddProductModal";
+import CardProduct from "../components/CardProduct";
 
 export default function Catalog() {
   const { user } = useContext(UserContext);
@@ -92,42 +93,7 @@ export default function Catalog() {
           {products.length > 0 ? (
             products.map((product) => (
               <Col md={4} key={product._id} className="mb-4">
-                <Card className="h-100 shadow" onClick={() => navigate(`/product/${product._id}`)}>
-                  <Link to={`/product/${product._id}`} style={{ textDecoration: "none", color: "inherit" }}>
-                    <Card.Img
-                      variant="top"
-                      src={product.imageUrl || `https://localhost:3000/products/public?name=${product.name}`}
-                      alt={product.name}
-                    />
-                  </Link>
-                  <Card.Body>
-                    <Card.Title>{product.name}</Card.Title>
-                    <Card.Text>{product.description}</Card.Text>
-                    <Card.Text className="fw-bold">₱{product.price}</Card.Text>
-
-                    {/* 🛠 Admin Toggle Button Only */}
-                    {user.isAdmin ? (
-                      <Button
-                        variant={product.isActive ? "danger" : "success"}
-                        className="w-100"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleToggleProduct(product._id, product.isActive);
-                        }}
-                      >
-                        {product.isActive ? "Archive" : "Activate"}
-                      </Button>
-                    ) : (
-                      <Button
-                        variant="primary fixed"
-                        className="w-100"
-                        onClick={() => navigate(`/product/${product._id}`, {})}
-                      >
-                        Add to Cart
-                      </Button>
-                    )}
-                  </Card.Body>
-                </Card>
+                <CardProduct product={product} user={user} handleToggleProduct={handleToggleProduct} />
               </Col>
             ))
           ) : (

@@ -15,7 +15,7 @@ const Orders = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .get("http://localhost:4000/orders/my-orders", {
+      .get(`${process.env.REACT_APP_API_URL}/orders/my-orders`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -31,7 +31,7 @@ const Orders = () => {
           productIds.map(
             (id) =>
               axios
-                .get(`http://localhost:4000/products/${id}`)
+                .get(`${process.env.REACT_APP_API_URL}/products/${id}`)
                 .then((res) => res.data)
                 .catch(() => null) // fail silently
           )

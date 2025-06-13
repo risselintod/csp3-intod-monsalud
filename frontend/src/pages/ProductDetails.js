@@ -18,7 +18,7 @@ const ProductDetails = () => {
 
   function fetchSpecificProduct() {
     axios
-      .get(`http://localhost:4000/products/${productId}`)
+      .get(`${process.env.REACT_APP_API_URL}/products/${productId}`)
       .then((res) => {
         setProduct(res.data);
         setLoading(false);
@@ -43,7 +43,7 @@ const ProductDetails = () => {
   const handleAddToCart = () => {
     axios
       .post(
-        "http://localhost:4000/cart/add-to-cart",
+        `${process.env.REACT_APP_API_URL}/cart/add-to-cart`,
         {
           productId,
           quantity,

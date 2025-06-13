@@ -19,7 +19,7 @@ export default function Catalog() {
   
 
   const fetchProducts = () => {
-    const endpoint = user.isAdmin ? "http://localhost:4000/products/all" : "http://localhost:4000/products/active";
+    const endpoint = user.isAdmin ? `${process.env.REACT_APP_API_URL}/products/all` : `${process.env.REACT_APP_API_URL}/products/active`;
 
     axios
       .get(endpoint, {
@@ -41,7 +41,7 @@ export default function Catalog() {
     const action = isActive ? "archive" : "activate";
     axios
       .patch(
-        `http://localhost:4000/products/${productId}/${action}`,
+        `${process.env.REACT_APP_API_URL}/products/${productId}/${action}`,
         {},
         {
           headers: {

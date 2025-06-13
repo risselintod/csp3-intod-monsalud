@@ -23,7 +23,7 @@ const AddProductModal = ({ show, handleClose, onProductAdded }) => {
     }
 
     try {
-      await axios.post("http://localhost:4000/products/", form, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/products/`, form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

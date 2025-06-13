@@ -14,13 +14,6 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isActive, setIsActive] = useState(false);
 
-  console.log(firstName);
-  console.log(lastName);
-  console.log(email);
-  console.log(mobileNo);
-  console.log(password);
-  console.log(confirmPassword);
-
   useEffect(() => {
     if (
       firstName !== "" &&
@@ -41,7 +34,7 @@ export default function Register() {
   function registerUser(user) {
     user.preventDefault();
 
-    fetch("http://localhost:4000/users/register", {
+    fetch(`${process.env.REACT_APP_API_URL}/users/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

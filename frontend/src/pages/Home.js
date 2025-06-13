@@ -1,7 +1,6 @@
 import React from "react";
-import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import CardProduct from "../components/CardProduct";
 
 const Home = (products) => {
   console.log("HOME PRODUCTS:", products);

@@ -4,6 +4,7 @@ import { Notyf } from "notyf";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../context/UserContext";
 
+
 export default function Login() {
   const navigate = useNavigate();
   const notyf = new Notyf();
@@ -15,7 +16,7 @@ export default function Login() {
   function authenticate(e) {
     e.preventDefault();
 
-    fetch("http://localhost:4000/users/login", {
+    fetch(`${process.env.REACT_APP_API_URL}/users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,7 +45,7 @@ export default function Login() {
   }
 
   function retrieveUserDetails(token) {
-    fetch("http://localhost:4000/users/details", {
+    fetch(`${process.env.REACT_APP_API_URL}/users/details`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -63,10 +64,10 @@ export default function Login() {
   }, [email, password]);
 
   return (
-    <Form className="p-5 m-5 bg-dark" onSubmit={authenticate}>
+    <Form className="p-5 m-5 bg-dark text-white" onSubmit={authenticate}>
       <Row>
         <Col md="8" className="mx-auto">
-          <h1 className="text-center my-5 text-white">Login Form</h1>
+          <h1 className="text-center my-5">Login Form</h1>
           <Form.Group className="pb-5">
             <Form.Label>Email:</Form.Label>
             <Form.Control

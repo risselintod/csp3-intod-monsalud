@@ -23,7 +23,7 @@ const EditProductModal = ({ show, handleClose, refresh, product }) => {
     }
 
     try {
-      await axios.patch(`http://localhost:4000/products/${product._id}/update`, form, {
+      await axios.patch(`${process.env.REACT_APP_API_URL}/products/${product._id}/update`, form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

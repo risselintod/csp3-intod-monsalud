@@ -10,7 +10,7 @@ export default function CardProduct({product, user, handleToggleProduct}) {
                   <Link to={`/product/${product._id}`} style={{ textDecoration: "none", color: "inherit" }}>
                     <Card.Img
                       variant="top"
-                      src={product.imageUrl || `https://localhost:3000/products/public?name=${product.name}`}
+                      src={product.imageUrl || `${process.env.REACT_APP_API_URL}/products/public?name=${product.name}`}
                       alt={product.name}
                     />
                   </Link>

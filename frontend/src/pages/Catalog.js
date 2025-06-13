@@ -1,8 +1,8 @@
 import { useEffect, useState, useContext } from "react";
-import { Col, Container, Row, Card, Button } from "react-bootstrap";
+import { Col, Container, Row, Button } from "react-bootstrap";
 import axios from "axios";
 import UserContext from "../context/UserContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import AddProductModal from "../components/AddProductModal";
 import CardProduct from "../components/CardProduct";
@@ -12,7 +12,7 @@ export default function Catalog() {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
-  const handleOpenModal = () => setShowModal(true);
+  // const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
 
   console.log("PRODUTS: ", products);

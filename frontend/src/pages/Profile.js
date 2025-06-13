@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import UserContext from "../context/UserContext";
-import { Card, Container, Row, Col, Image } from "react-bootstrap";
-import { FaUser, FaEnvelope, FaPhone, FaIdBadge } from "react-icons/fa";
+import { Card, Container, Row, Col } from "react-bootstrap";
+import { FaEnvelope, FaPhone, FaIdBadge } from "react-icons/fa";
 
 export default function Profile() {
   const { user } = useContext(UserContext);

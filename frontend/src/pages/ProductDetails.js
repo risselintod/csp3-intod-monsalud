@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Container, Card, Button, Spinner, Alert, Row, Col, InputGroup, FormControl } from "react-bootstrap";
+import { Container, Card, Button, Spinner, Alert, Row, Col, FormControl } from "react-bootstrap";
 import UserContext from "../context/UserContext";
 import EditProductModal from "../components/EditProductModal";
 
@@ -13,7 +13,7 @@ const ProductDetails = () => {
   const [error, setError] = useState("");
   const [quantity, setQuantity] = useState(1);
   const [showModal, setShowModal] = useState("");
-  const handleOpenModal = () => setShowModal(true);
+  // const handleOpenModal = () => setShowModal(true);
   const handleCloseModal = () => setShowModal(false);
 
   function fetchSpecificProduct() {

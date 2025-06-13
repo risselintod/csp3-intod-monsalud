@@ -80,7 +80,7 @@ export default function Login() {
             backgroundColor: "#ffffff",
           }}
         >
-          <h2 className="text-center mb-4 text-primary">Welcome Back 👋</h2>
+          <h2 className="text-center mb-4 text-primary">Log In to Your Account</h2>
           <Form onSubmit={authenticate}>
             <Form.Group className="mb-3">
               <Form.Label>Email address</Form.Label>
